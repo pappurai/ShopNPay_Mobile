@@ -1,55 +1,66 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Login from '../screens/Login';
-import OTP from '../screens/OTP'
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Login from "../screens/Login";
+import OTP from "../screens/OTP";
+import Home from "../screens/Home";
 const Stack = createNativeStackNavigator();
-const Shopnavigator =() => {
-    return (
-        <NavigationContainer>
+const Shopnavigator = () => {
+  return (
+    <NavigationContainer>
       <Stack.Navigator
-       screenOptions={{
+        screenOptions={{
           headerTitleStyle: {
             fontFamily: "open-sans-bold",
             fontSize: 20,
-           
-          },
-        }}>
-         
-        <Stack.Screen name="Login Screen" component={Login}
-        options={{
-          
-          headerStyle: {
-            backgroundColor: '#1A237E',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
           },
         }}
-        
-        
-        /> 
-        <Stack.Screen name="Enter OTP" component={OTP}
+      >
+        <Stack.Screen
+          name="Login Screen"
+          component={Login}
           options={{
-          
             headerStyle: {
-              backgroundColor: '#1A237E',
+              backgroundColor: "#1A237E",
             },
-            headerTintColor: '#fff',
+            headerTintColor: "#fff",
             headerTitleStyle: {
-              fontWeight: 'bold',
+              fontWeight: "bold",
             },
-          }} 
-          /> 
+          }}
+        />
+        <Stack.Screen
+          name="Enter OTP"
+          component={OTP}
+          options={{
+            headerStyle: {
+              backgroundColor: "#1A237E",
+            },
+            headerTintColor: "#fff",
+            headerTitleStyle: {
+              fontWeight: "bold",
+            },
+          }}
+        />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            headerStyle: {
+              backgroundColor: "#1A237E",
+            },
+            headerTintColor: "#fff",
+            headerTitleStyle: {
+              fontWeight: "bold",
+            },
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
-    )
-}
+  );
+};
 
+const styles = StyleSheet.create({});
 
-
-const styles = StyleSheet.create({})
-
-export default Shopnavigator
+export default Shopnavigator;
