@@ -30,7 +30,9 @@ const Login = ({ navigation }) => {
       .catch((err) => {
         console.log(err);
       });
-    navigation.navigate("Enter OTP");
+    navigation.navigate("Enter OTP", {
+      mobileNumber,
+    });
   };
 
   const handleRoute = () => {
@@ -38,13 +40,6 @@ const Login = ({ navigation }) => {
       return seterror(true);
     }
     getOTP();
-    // history.push({
-    //     pathname: "/otp",
-    //     state: {
-    //         // location state
-    //         mobile: mobileNumber,
-    //     },
-    // });
   };
 
   return (
@@ -72,7 +67,9 @@ const Login = ({ navigation }) => {
         />
       </View>
       {error && (
-        <p style={{ color: "red" }}>please enter 10 digits mobile number</p>
+        <Text style={{ color: "red", marginHorizontal: 20 }}>
+          please enter 10 digits mobile number
+        </Text>
       )}
       <View style={styles.service}>
         <Text style={styles.agreement}>
